@@ -1,0 +1,129 @@
+.dashboardContainer {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(209, 209, 209, 1) 0%,
+    rgba(227, 227, 227, 1) 29%,
+    rgba(214, 214, 214, 0.88) 100%
+  );
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 5rem 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  transition: grid-template-columns 0.3s ease-in-out;
+}
+
+.sbExpand {
+  grid-template-columns: 12.5rem 1fr;
+}
+
+.dashboardHeader {
+  background-color: var(--hc-white);
+  grid-area: header;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dashboardSidebar {
+  background-color: var(--hc-primary);
+  grid-area: sidebar;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.sidebarLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sidebarLogo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--hc-white);
+  padding: 4px;
+}
+
+.sidebarButton {
+  position: absolute;
+  top: 6rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--hc-white);
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hc-primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.sidebarButton:hover {
+  background-color: var(--hc-primary);
+  color: var(--hc-white);
+  transform: scale(1.1);
+}
+
+.dashboardFooter {
+  background-color: #333;
+  color: var(--hc-white);
+  grid-area: footer;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dashboardMain {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  background-color: #f5f5f5;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .dashboardMain {
+    flex-direction: row;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboardContainer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  .dashboardSidebar {
+    display: none;
+  }
+
+  .sbExpand ~ .dashboardHeader,
+  .sbExpand ~ .dashboardMain,
+  .sbExpand ~ .dashboardFooter {
+    grid-column: 1;
+  }
+
+  .dashboardHeader {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
+}

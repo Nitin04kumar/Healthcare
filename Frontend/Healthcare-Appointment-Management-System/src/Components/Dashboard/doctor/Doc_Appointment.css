@@ -1,0 +1,259 @@
+/* Appointment.css */
+.appointment-container {
+  background-color: #fff;
+  border-radius: 12px;
+  /* padding: 24px; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  height: 100%;
+}
+
+.appointment-header {
+  margin-bottom: 24px;
+}
+
+.appointment-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+}
+
+.appointment-controls {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  min-width: 250px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.status-select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table-header {
+  display: table-cell; /* Ensure headers behave like table cells */
+  text-align: left;
+  padding: 16px;
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-weight: 600;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+
+.table-cell {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.table-row:hover {
+  background-color: #f9fafb;
+}
+
+.cell-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.reason-cell {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #6b7280;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.status-waiting {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-booked {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-cancelled {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.actions-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-accept {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.btn-accept:hover {
+  background-color: #a7f3d0;
+}
+
+.btn-decline {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.btn-decline:hover {
+  background-color: #fecaca;
+}
+
+.btn-complete {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-complete:hover {
+  background-color: #2563eb;
+}
+
+.btn-consult {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #10b981;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-consult:hover {
+  background-color: #059669;
+}
+
+.status-final {
+  font-size: 12px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.appointment-loading {
+  text-align: center;
+  padding: 32px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.no-appointments {
+  text-align: center;
+  padding: 32px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.appointments-table,
+.appointments-table thead,
+.appointments-table tbody,
+.appointments-table tr,
+.appointments-table th,
+.appointments-table td {
+  display: revert;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .appointment-controls {
+    flex-direction: column;
+  }
+  
+  .search-container, .status-select {
+    width: 100%;
+  }
+  
+  .appointments-table {
+    min-width: 600px;
+  }
+}

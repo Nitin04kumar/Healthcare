@@ -1,0 +1,75 @@
+.card {
+  padding: 3%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.cardRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 1%;
+}
+
+.medicineCard {
+  background-color: white;
+  border: 1px solid #2596be;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.medicineName {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.instruction {
+  font-size: 14px;
+  color: #333;
+  word-break: break-word;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .cardRow {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .medicineCard {
+    flex: 0 0 calc(50% - 8px);
+    min-width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .medicineCard {
+    flex: 1;
+  }
+
+  .cardRow {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .medicineCard {
+    padding: 12px;
+  }
+
+  .medicineName {
+    font-size: 16px;
+  }
+
+  .instruction {
+    font-size: 13px;
+  }
+}

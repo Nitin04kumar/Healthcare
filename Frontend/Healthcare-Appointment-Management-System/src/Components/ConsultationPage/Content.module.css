@@ -1,0 +1,65 @@
+.card3 {
+  background-color: white;
+  border-radius: 8px;
+  height: auto;
+  min-height: 400px;
+  margin: 1%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.buttonRow {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 50%;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 16px;
+  background-color: white;
+  color: #2596be;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #2596be;
+}
+
+.button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.button:hover {
+  background-color: #e6f7ff;
+}
+
+.active {
+  background-color: #2596be;
+  color: white;
+}
+
+.active:hover {
+  background-color: #1a7a9a;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .card3 {
+    margin: 0.5%;
+    padding: 0.75rem;
+  }
+
+  .button {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+}

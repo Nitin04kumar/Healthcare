@@ -1,0 +1,226 @@
+/* Consultations.css */
+.consultations-card {
+  background-color: var(--hc-white);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.consultations-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0.75rem;
+}
+
+.consultations-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.consultations-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #9ca3af;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.consultation-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.consultation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.consultation-date {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.consultation-doctor {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--hc-highlight);
+  ;
+}
+
+.consultation-status {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.consultation-status.completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.consultation-status.followup_needed {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.consultation-details {
+  font-size: 0.85rem;
+}
+
+.symptoms h4 {
+  margin: 0.5rem 0 0.25rem 0;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.symptoms p {
+  margin: 0;
+  color: #1f2937;
+}
+
+.vitals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.vital-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.prescription-section {
+  margin-top: 0.75rem;
+}
+
+.prescription-section h4 {
+  margin: 0.5rem 0 0.25rem 0;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.prescription-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.prescription-item {
+  background-color: #f0fdf4;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.medicine-info {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.medicine-name {
+  font-weight: 500;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #1f2937;
+  color: white;
+  text-align: left;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.followup {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #3b82f6;
+}
+
+/* Scrollbar styling */
+.consultations-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.consultations-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.consultations-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.consultations-list::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+@media (max-width: 768px) {
+  .consultation-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .consultation-status {
+    align-self: flex-start;
+  }
+  
+  .vitals {
+    gap: 0.5rem;
+  }
+}

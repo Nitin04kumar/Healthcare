@@ -1,0 +1,424 @@
+/* Appointment.css */
+.doctor-appointments {
+  padding: 0;
+  max-width: 100%;
+}
+
+.doctor-appointments__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--hc-border-color);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.doctor-appointments__title {
+  font-family: var(--font-secondary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--hc-primary);
+  margin: 0;
+}
+
+.doctor-appointments__controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--hc-gray-text);
+}
+
+.search-input {
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1px solid var(--hc-border-color);
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  background-color: var(--hc-white);
+  color: var(--hc-text);
+  min-width: 250px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--hc-primary);
+  box-shadow: 0 0 0 3px rgba(17, 124, 111, 0.1);
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--hc-gray-text);
+}
+
+.filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--hc-border-color);
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  background-color: var(--hc-white);
+  color: var(--hc-text);
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--hc-primary);
+}
+
+/* Table Styles */
+.appointments-table-container {
+  background-color: var(--hc-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--hc-border-color);
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appointments-table th {
+  background-color: var(--hc-gray-light);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--hc-text);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sortable-header {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sortable-header:hover {
+  background-color: var(--hc-primary-light);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.appointment-row {
+  border-bottom: 1px solid var(--hc-border-color);
+  transition: background-color 0.2s;
+}
+
+.appointment-row:hover {
+  background-color: var(--hc-gray-light);
+}
+
+.appointment-row:last-child {
+  border-bottom: none;
+}
+
+.appointments-table td {
+  padding: 1rem;
+  color: var(--hc-text);
+}
+
+/* Cell Styles */
+.patient-cell,
+.date-cell,
+.time-cell {
+  font-weight: 500;
+}
+
+.patient-info,
+.date-info,
+.time-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.patient-icon,
+.date-icon,
+.time-icon {
+  color: var(--hc-primary);
+  flex-shrink: 0;
+}
+
+.status-cell {
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.waiting {
+  background-color: var(--hc-orange-light);
+  color: var(--hc-orange-dark);
+}
+
+.status-badge.booked {
+  background-color: var(--hc-blue-light);
+  color: var(--hc-blue-dark);
+}
+
+.status-badge.completed {
+  background-color: var(--hc-green-light);
+  color: var(--hc-green-dark);
+}
+
+.status-badge.cancelled {
+  background-color: var(--hc-red-light);
+  color: var(--hc-red-dark);
+}
+
+.reason-cell {
+  max-width: 250px;
+}
+
+.reason-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.actions-cell {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.accept-btn {
+  background-color: var(--hc-success-light);
+  color: var(--hc-success-dark);
+}
+
+.accept-btn:hover {
+  background-color: var(--hc-success);
+  color: var(--hc-white);
+}
+
+.reject-btn {
+  background-color: var(--hc-alert-light);
+  color: var(--hc-alert-dark);
+}
+
+.reject-btn:hover {
+  background-color: var(--hc-alert);
+  color: var(--hc-white);
+}
+
+.complete-btn {
+  background-color: var(--hc-primary-light);
+  color: var(--hc-primary-dark);
+}
+
+.complete-btn:hover {
+  background-color: var(--hc-primary);
+  color: var(--hc-white);
+}
+
+.no-actions {
+  color: var(--hc-gray-text);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Loading State */
+.doctor-appointments__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--hc-gray-text);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--hc-gray-light);
+  border-top: 3px solid var(--hc-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.no-appointments {
+  text-align: center;
+  padding: 3rem !important;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--hc-gray-text);
+}
+
+.empty-icon {
+  margin-bottom: 1rem;
+  color: var(--hc-gray-text);
+}
+
+.empty-subtext {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--hc-gray-text);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .appointments-table-container {
+    overflow-x: auto;
+  }
+  
+  .appointments-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-appointments__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .doctor-appointments__controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-container,
+  .filter-container {
+    width: 100%;
+  }
+  
+  .search-input {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    justify-content: center;
+  }
+}
+
+/* Dark Mode Support */
+.dark-mode .appointments-table-container {
+  background-color: var(--hc-gray-light);
+  border-color: var(--hc-gray-dark);
+}
+
+.dark-mode .appointments-table th {
+  background-color: var(--hc-gray-dark);
+  color: var(--hc-gray-light);
+}
+
+.dark-mode .appointment-row:hover {
+  background-color: var(--hc-gray-dark);
+}
+
+.dark-mode .search-input,
+.dark-mode .filter-select {
+  background-color: var(--hc-gray-light);
+  border-color: var(--hc-gray-dark);
+  color: var(--hc-gray-light);
+}
+
+.dark-mode .search-input:focus,
+.dark-mode .filter-select:focus {
+  border-color: var(--hc-primary);
+}
+
+/* Add these color variables if they don't exist in your theme */
+/* :root {
+  --hc-orange-light: #fff3e0;
+  --hc-orange-dark: #e65100;
+  --hc-blue-light: #e3f2fd;
+  --hc-blue-dark: #1565c0;
+  --hc-green-light: #e8f5e9;
+  --hc-green-dark: #2e7d32;
+  --hc-red-light: #ffebee;
+  --hc-red-dark: #c62828;
+  --hc-primary-light: #e0f2f1;
+  --hc-primary-dark: #00796b;
+  --hc-success-light: #e8f5e9;
+  --hc-success-dark: #2e7d32;
+  --hc-alert-light: #ffebee;
+  --hc-alert-dark: #c62828;
+} */
+
+/* .dark-mode {
+  --hc-orange-light: #4a3000;
+  --hc-orange-dark: #ffb74d;
+  --hc-blue-light: #0a2d4d;
+  --hc-blue-dark: #90caf9;
+  --hc-green-light: #1b3b1c;
+  --hc-green-dark: #a5d6a7;
+  --hc-red-light: #3f0f13;
+  --hc-red-dark: #ef9a9a;
+  --hc-primary-light: #1a3c39;
+  --hc-primary-dark: #80cbc4;
+  --hc-success-light: #1b3b1c;
+  --hc-success-dark: #a5d6a7;
+  --hc-alert-light: #3f0f13;
+  --hc-alert-dark: #ef9a9a;
+} */

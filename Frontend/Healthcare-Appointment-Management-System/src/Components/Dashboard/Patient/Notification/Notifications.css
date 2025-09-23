@@ -1,0 +1,200 @@
+/* Notification Component */
+.notification {
+  position: relative;
+}
+
+.notification__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.notification__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.notification__mark-all {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.notification__mark-all:hover:not(:disabled) {
+  background-color: #eff6ff;
+}
+
+.notification__mark-all:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.notification__content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notification__list {
+  padding: 0.5rem;
+}
+
+.notification__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.notification__item:hover {
+  background-color: #f9fafb;
+}
+
+.notification__item-icon {
+  color: #3b82f6;
+  background-color: #eff6ff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notification__item-content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.notification__message {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.85rem;
+  color: #374151;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.notification__time {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.notification__action {
+  background: none;
+  border: 1px solid #e5e7eb;
+  color: #9ca3af;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.notification__action:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.notification__state,
+.notification__empty {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: #9ca3af;
+}
+
+.notification__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notification__empty p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+import React, { Component } from "react";
+
+var data = [
+  { id: "C001", name: "React", fee: "100", duration: "30 hours" },
+  { id: "C002", name: "Angular", fee: "160", duration: "45 hours" },
+  { id: "C003", name: "Advanced Java ", fee: "75", duration: "25 hours" },
+  { id: "C004", name: "Software Testing", fee: "135", duration: "45 hours" },
+  { id: "C004", name: "Data Analytics", fee: "135", duration: "60 hours" },
+];
+const styles = {
+  list: {
+    paddingBottom: 10,
+    borderBottomStyle: "solid",
+    borderBottomColor: "#ffffff",
+    borderBottomWidth: 1,
+    marginBottom: 10,
+  },
+  title: {
+    fontWeight: "bold",
+  },
+};
+class AboutUs extends Component {
+  render() {
+    return (
+      <div>
+        <h1 style={{ textAlign: "center" }}>iTech - Temple of Learning</h1>
+        <h2 style={{ textAlign: "center" }}>
+          Welcome to the iTech online study portal
+        </h2>
+        <div style={{ marginLeft: "25px" }}>
+          <h3>About Us</h3>
+          <p style={{ color: "#ffffff" }}>
+            iTech offers online courses on cutting-edge technologies in
+            Information Technology. iTech e-Learning is the right platform to
+            enable Community learning, sharing knowledge and become a healthy
+            competent.
+          </p>
+          <h1 style={{ textAlign: "center", color: "#ffd700" }}>
+            Register with us today for the best offers!!!
+          </h1>
+        </div>
+        <div>
+          {data.map((course) => (
+            <Display key={course.id} data={course} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+class Display extends Component {
+  render() {
+    const { data: course } = this.props;
+    return (
+      <div style={{ marginLeft: "25px" }}>
+        <div>{course.id}</div>
+        <div style={styles.title}>{course.name}</div>
+        <div>{course.duration}</div>
+        <div style={styles.list}>Fees: ${course.fee}</div>
+      </div>
+    );
+  }
+}
+export { Display };
+export default AboutUs;

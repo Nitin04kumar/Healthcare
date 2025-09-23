@@ -1,0 +1,237 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(209, 209, 209, 1) 0%,
+    rgba(227, 227, 227, 1) 29%,
+    rgba(214, 214, 214, 0.88) 100%
+  );
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 5rem 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  transition: grid-template-columns 0.3s ease-in-out;
+  padding-top: 4.5rem;
+}
+
+.dashboard-container.sb-expand {
+  grid-template-columns: 12.5rem 1fr;
+}
+
+/* --- Component Styles --- */
+.dashboard__header {
+  background-color: var(--hc-white);
+  grid-area: header;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 900;
+  display: flex;
+  position: fixed;
+  width: 95%;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+
+.dashboard__sidebar {
+  background-color: var(--hc-primary);
+  grid-area: sidebar;
+  position: relative;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 5rem;
+  height: 100%;
+}
+
+.dashboard__sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard__sidebar-logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--hc-white);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.sidebar__quick-links {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.link-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  color: var(--hc-white);
+}
+
+.link-items li {
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.link-items li:hover {
+  transform: scale(1.1);
+  color: var(--hc-accent);
+}
+
+.link-items .logout {
+  color: rgb(245, 110, 110);
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.logout:hover {
+  color: rgb(235, 41, 41);
+}
+
+.dashboard__sidebar button {
+  position: absolute;
+  top: 6rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--hc-white);
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hc-primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.dashboard__sidebar button:hover {
+  background-color: var(--hc-primary);
+  color: var(--hc-white);
+  transform: scale(1.1);
+}
+
+.dashboard__footer {
+  background-color: #333;
+  color: var(--hc-white);
+  grid-area: footer;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+}
+
+/* --- Main Content Grid --- */
+.dashboard__main {
+  grid-area: main;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
+}
+
+.dashboard__main-cards {
+  padding: 0.5rem;
+  background-color: var(--hc-white);
+  border-radius: 0.4rem;
+  color: var(--hc-black);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Responsive Grid Layout */
+@media (min-width: 768px) {
+  .dashboard__main {
+    grid-template-areas:
+      "c1 c1 c2"
+      "c3 c4 c4"
+      "c7 c7 c7";
+  }
+
+  .cards-1 {
+    grid-area: c1;
+  }
+  .cards-2 {
+    grid-area: c2;
+  }
+  .cards-3 {
+    grid-area: c3;
+  }
+  .cards-4 {
+    grid-area: c4;
+  }
+  .cards-7 {
+    grid-area: c7;
+  }
+}
+
+.dashboard__main_card-2 {
+  background-color: white;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .dashboard__main {
+    grid-template-areas:
+      "c1 c4 c4 c2"
+      "c3 c4 c4 c2"
+      "c7 c7 c7 c2";
+  }
+
+  .cards-1 {
+    grid-area: c1;
+    min-height: 100%;
+  }
+  .cards-2 {
+    grid-area: c2;
+    min-height: 100%;
+  }
+  .cards-3 {
+    grid-area: c3;
+    max-height: 100%;
+  }
+
+  .cards-4 {
+    grid-area: c4;
+    min-height: 400px;
+  }
+  .cards-7 {
+    grid-area: c7;
+  }
+}
+
+/* Mobile screen responsive*/
+@media (width<768px) {
+  .dashboard__header {
+    width: 82%;
+    font-size: 1.2rem;
+  }
+}

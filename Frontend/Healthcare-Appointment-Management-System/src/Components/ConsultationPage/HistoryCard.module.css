@@ -1,0 +1,50 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.date {
+  font-size: small;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.symtoms {
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.prescriptionList {
+  padding-left: 20px;
+  margin-top: 8px;
+  font-size: small;
+}
+
+.prescriptionList li {
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .card {
+    padding: 12px;
+    margin: 8px 0;
+  }
+
+  .prescriptionList {
+    padding-left: 16px;
+  }
+}

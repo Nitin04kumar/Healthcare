@@ -1,0 +1,154 @@
+.profile-card {
+  max-width: 90%;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.profile-card__content {
+  padding: 24px;
+}
+
+.profile-card__name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+}
+
+.profile-card__email {
+  color: #7f8c8d;
+  margin: 0 0 20px 0;
+  font-size: 14px;
+}
+
+.profile-card__details {
+  margin-bottom: 24px;
+}
+
+.profile-card__detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.profile-card__detail:last-child {
+  border-bottom: none;
+}
+
+.profile-card__detail-label {
+  font-weight: 600;
+  color: #34495e;
+}
+
+.profile-card__detail-value {
+  color: #7f8c8d;
+}
+
+.profile-card__update-button {
+  background-color: var(--hc-primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.profile-card__update-button:hover {
+  background-color: #2980b9;
+}
+
+.profile-card__update-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Form Styles */
+.profile-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-card__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-card__form-label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 14px;
+}
+
+.profile-card__form-input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.profile-card__form-input:focus {
+  outline: none;
+  border-color: var(--hc-primary);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.profile-card__form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.profile-card__cancel-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  flex: 1;
+  transition: background-color 0.2s;
+}
+
+.profile-card__cancel-button:hover {
+  background-color: #c0392b;
+}
+
+/* Loading State */
+.profile-card__loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profile-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .profile-card__content {
+    padding: 16px;
+  }
+  
+  .profile-card__name {
+    font-size: 20px;
+  }
+  
+  .profile-card__form-actions {
+    flex-direction: column;
+  }
+  
+  .profile-card__update-button,
+  .profile-card__cancel-button {
+    width: 100%;
+  }
+}

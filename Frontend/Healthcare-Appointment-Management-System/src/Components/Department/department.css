@@ -1,0 +1,117 @@
+.department-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0px;
+  /* background-color: var(--hc-gray-background);  */
+  color: var(--hc-white);
+  /* background: url('../../assets/background2.jpeg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  margin: 0 auto;
+  /* clip-path: polygon(52% 0, 100% 13%, 100% 50%, 100% 89%, 0 100%, 0% 50%); */
+}
+
+.department-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.department-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--hc-primary);
+  margin-bottom: 20px;
+}
+
+.department-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--hc-secondary);
+  /* margin: 0 auto; */
+}
+
+.department-subtitle {
+  font-size: 1.1rem;
+  color: var(--hc-gray-dark);
+  margin-bottom: 40px;
+}
+
+.department-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 90%;
+}
+
+.department-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.department-card:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.department-icon {
+  height: 60px;
+  width: 60px;
+  object-fit: fit;
+  margin-bottom: 20px;
+  /* border-radius: 50%; */
+  padding: 0.5rem;
+  background-color: var(--hc-secondary);
+}
+
+.department-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--hc-black);
+  margin-bottom: 10px;
+}
+
+.department-card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--hc-gray-dark);
+}
+
+.department__btn--more {
+  margin-top: 40px;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: var(--hc-secondary);
+  color: var(--hc-white);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.department__btn--more:hover {
+  background-color: transparent;
+  color: var(--hc-secondary);
+  border: 1px solid var(--hc-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .department-title {
+    font-size: 2rem;
+  }
+
+  .department-subtitle {
+    font-size: 1rem;
+  }
+}
